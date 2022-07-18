@@ -1,6 +1,6 @@
 ---
 - name: configuring apache2
-  host name: appserver
+  hosts: appserver
   tasks:
   - name: installing apache2
     apt:

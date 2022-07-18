@@ -1,0 +1,15 @@
+---
+- name: configuring apache2
+  host name: appserver
+  tasks:
+  - name: installing apache2
+    apt:
+     name: apache2
+     state: present
+     update_cache: yes
+  - name: restart the service
+    service:
+     name: apache2
+     state: restarted
+
+   

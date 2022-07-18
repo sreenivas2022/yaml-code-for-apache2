@@ -1,0 +1,10 @@
+---
+- name: installing java
+  hosts: webserver
+  tasks:
+   - name: install default java
+     apt:
+      name: default-jdk
+      state: present
+      update_cache: yes
+       

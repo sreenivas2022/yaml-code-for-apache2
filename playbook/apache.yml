@@ -1,0 +1,21 @@
+---
+- name: configuring apache2
+  hosts: webserver
+  tasks:
+  - name: installing apache2
+    apt:
+     name: apache2
+     state: present
+     update_cache: yes
+  - name: edit index.html file
+    copy:
+     content: "welcome Leela Srinivas"
+     dest: /var/www/html/index.html
+  - name: restart the service
+    service:
+     name: apache2
+     state: restarted
+  - name: check the url response
+    uri:
+     url: http:// 172.31.12.238
+     state: 200     
